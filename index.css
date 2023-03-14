@@ -1,0 +1,93 @@
+body {
+    font-family: 'Smythe', cursive;
+    background: #F5F5F5;
+} 
+
+.page{
+    width: 600px;
+    height: 1161px;
+   background-color: #FFFFFF;
+   margin: 0 auto;
+}
+
+.logo{
+    background-image: url("/bg\ img.png");
+    background-size: cover;
+    height: 167px;
+    color: #FFFFFF;
+}
+
+
+.logo-title{
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    padding-top: 35px;
+    padding-bottom: 5px;
+}
+
+.logo-desc{
+    font-size: 1.25rem;
+    margin-top: 0;
+}
+
+.logo-text{
+    padding-left: 35px;
+    margin: 0;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    padding-left: 46px;
+    padding-top: 46px;
+}
+
+.item-emoji{
+    font-size: 4.91875rem;
+    padding-right: 31px;
+}
+
+.item-title{
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.item-description{
+    font-size: 1.5rem;
+    color: #8B8B8B;
+   margin: 0;
+}
+
+.item-price{
+    font-size: 2rem;
+    margin: 0;
+}
+
+.item-title , .item-price{
+    color: #000000;
+}
+
+.item-price , .item-description{
+    padding-bottom: 8px;
+}
+
+
+button{
+    background: none;
+    align-self: center;
+    border: 1.5px solid #DEDEDE;
+     border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    
+}
+
+
+.btn-container{
+   margin-left: auto;
+   padding-right: 57px;
+}
+
+button:hover{
+    cursor: pointer;
+}
