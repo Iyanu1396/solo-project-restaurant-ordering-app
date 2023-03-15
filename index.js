@@ -1,5 +1,38 @@
 import { menuArray } from "./data.js";
 const itemContainer = document.getElementById("item-container")
+const checkoutDetails = document.getElementById("checkout-details")
+
+document.addEventListener("click" ,function(e){
+  if (e.target.dataset.add) {
+    handleAddBtn(e.target.dataset.add)
+  }
+ 
+})
+
+function handleAddBtn(addBtn) {
+
+  console.log(addBtn)
+  
+}
+
+
+function getCheckoutHtml(){
+  let checkOutHtml = ``
+  const checkOutArray = []
+  checkOutArray.forEach(function(checkOut){
+    
+    checkOutHtml += `
+    <p class="checkout-details"> <span class="item-name">${checkOut.name}</span> <span class="item-amount">$${checkOut.price}</span> </p>
+    <br>
+    `
+
+  })
+
+  return checkOutHtml
+
+}
+
+
 
 function getItemsHtml(menuLists){
   let  itemsHtml = ``
@@ -17,7 +50,6 @@ function getItemsHtml(menuLists){
     </div>
      </div>
      <br>
-  
      
      `
 
@@ -28,9 +60,14 @@ function getItemsHtml(menuLists){
 }
 
 
-function render(){
+function renderItems(){
   itemContainer.innerHTML = getItemsHtml(menuArray)
 
 }
 
-render()
+function renderCheckOut(){
+  renderItems()
+ checkoutDetails.innerHTML = getCheckoutHtml()
+}
+
+renderCheckOut()
