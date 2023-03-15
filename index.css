@@ -1,12 +1,10 @@
 body {
     font-family: 'Smythe', cursive;
-    background: #F5F5F5;
+    background: #FFFFFF;
     color: #000;
 } 
 
 .page{
-    
-   background-color: #FFFFFF;
    margin: 0 auto;
 }
 
