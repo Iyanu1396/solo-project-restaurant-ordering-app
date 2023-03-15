@@ -1,24 +1,44 @@
 import { menuArray } from "./data.js";
 const itemContainer = document.getElementById("item-container")
 const checkoutDetails = document.getElementById("checkout-details")
+const checkOutArray = []
 
 document.addEventListener("click" ,function(e){
   if (e.target.dataset.add) {
     handleAddBtn(e.target.dataset.add)
   }
- 
 })
 
-function handleAddBtn(addBtn) {
 
-  console.log(addBtn)
-  
+
+function handleAddBtn(addBtn) {
+document.getElementById("inner-container").classList.remove('hidden')
+
+const filteredObjects = menuArray.filter(function(filter){
+     return filter.id == addBtn
+})[0]
+
+checkOutArray.push(filteredObjects)
+calculateTotalPrice()
+renderCheckOut()
 }
+
+
+
+function calculateTotalPrice(){
+  const totalAmount = document.getElementById("total-amount" )
+  let totalPrice = 0
+  checkOutArray.forEach(function(item){
+     totalPrice += item.price
+ 
+   })
+ return totalAmount.innerHTML = `$${totalPrice}`
+ }
+ 
 
 
 function getCheckoutHtml(){
   let checkOutHtml = ``
-  const checkOutArray = []
   checkOutArray.forEach(function(checkOut){
     
     checkOutHtml += `
@@ -38,6 +58,7 @@ function getItemsHtml(menuLists){
   let  itemsHtml = ``
     menuLists.forEach(function(menu){
      itemsHtml += `
+
      <div class="item">
      <span class="item-emoji">${menu.emoji}</span>
     <div class="item-info">
@@ -52,7 +73,6 @@ function getItemsHtml(menuLists){
      <br>
      
      `
-
     })
 
     return itemsHtml
@@ -71,3 +91,4 @@ function renderCheckOut(){
 }
 
 renderCheckOut()
+
